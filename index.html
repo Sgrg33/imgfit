@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Fitness Centre</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#9B1C8D',
+                        secondary: '#f5f5f5'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .class-card {
+            transition: transform 0.3s ease;
+        }
+        .class-card:hover {
+            transform: translateY(-5px);
+        }
+        .nav-active {
+            border-bottom: 2px solid white;
+        }
+        .section {
+            scroll-margin-top: 70px; /* Adjust for fixed header height */
+        }
+        /* Active state for mobile tab bar */
+        .tab-link.active {
+            color: white; /* Or a specific color you prefer for active */
+            /* Add any other active styles like background, border etc. */
+            background-color: rgba(0,0,0,0.1); /* Slight darker background */
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <nav class="bg-[#9B1C8D] text-white fixed w-full top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-2xl font-['Agdasima'] mr-3">IMAGE FITNESS CENTRE</span>
+            </div>
+
+            <div class="block md:hidden">
+                <button id="menu-toggle" class="w-10 h-10 flex items-center justify-center cursor-pointer">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="nav-link nav-active py-1 px-2">Home</a>
+                <a href="#about" class="nav-link py-1 px-2">About Me</a>
+                <a href="#contact" class="nav-link py-1 px-2">Contact</a>
+                <a href="tel:+9779840448068" class="ml-4 bg-white text-[#9B1C8D] px-4 py-2 !rounded-button font-medium hover:bg-gray-100 transition duration-300 cursor-pointer">Join Now</a>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden bg-primary pb-4 px-4">
+            <a href="#home" class="mobile-nav-link block py-2 border-b border-purple-700">Home</a>
+            <a href="#about" class="mobile-nav-link block py-2 border-b border-purple-700">About Me</a>
+            <a href="#contact" class="mobile-nav-link block py-2 border-b border-purple-700">Contact</a>
+            <a href="tel:+9779840448068" class="block py-2">
+                <button class="w-full bg-white text-[#9B1C8D] px-4 py-2 mt-2 !rounded-button font-medium hover:bg-gray-100 transition duration-300 cursor-pointer">Join Now</button>
+            </a>
+        </div>
+    </nav>
+
+    <section id="home" class="section pt-20 pb-10">
+        <div class="relative w-full h-[300px] mb-8 bg-cover bg-center" style="background-image: url('images/IMAGE_front.png');">
+            <div class="absolute inset-0 bg-primary bg-opacity-50 flex flex-col justify-center items-center text-white p-4 text-center">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">Move to the Rhythm</h1>
+                <p class="text-lg md:text-xl mb-6">Discover the joy of fitness through dance</p>
+                <a href="tel:+9779840448068" class="bg-white text-[#880085] px-6 py-3 !rounded-button font-semibold hover:bg-gray-100 transition duration-300 cursor-pointer">Start Your Fitness Journey</a>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 mx-4">
+            <div class="flex items-start">
+                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-[#9B1C8D] text-white mr-3 flex-shrink-0">
+                    <i class="ri-time-line"></i>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Morning Classes</h4>
+                    <p class="text-gray-700">Sunday to Friday: 5:00 AM - 7:00 AM</p>
+                    <p class="text-gray-700">Saturday: Closed</p>
+                    <br>
+                    <h4 class="font-semibold text-gray-800 mb-2">Evening Classes</h4>
+                    <p class="text-gray-700">Sunday to Friday: 5:30 PM - 7:30 PM</p>
+                    <p class="text-gray-700">Saturday: Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section pt-16 pb-10 px-4">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">About Me</h2>
+
+        <div class="bg-white rounded-lg p-5 mb-8 shadow-md">
+            <img src="image01/IMAGE_front.png" alt="Instructor photo"
+                 class="block mx-auto w-auto h-[150px] object-cover rounded-full mb-4">
+            <h3 class="text-xl font-bold text-gray-800 mb-1 text-center">Mrs.Krishna Gurung</h3>
+            <p class="text-primary font-medium mb-2 text-center">Proprietor</p>
+            <p class="text-gray-700 mb-3 text-center">Licensed Zumba Instructor with over 8 years of experience. Specialized in Zumba Routines</p>
+            <div class="flex flex-wrap justify-center mb-4">
+                <span class="bg-primary bg-opacity-10 text-primary text-xs font-medium px-2 py-1 rounded-full mr-2 mb-2">Certified Zumba Instructor</span>
+            </div>
+
+            <div class="border-t border-gray-200 pt-4">
+                <h4 class="font-semibold text-gray-800 mb-2">My Zumba Journey</h4>
+                <p class="text-gray-700 mb-4">I discovered Zumba in 2015 and immediately fell in love with how it combines fitness and fun. After experiencing the transformative power of dance fitness in my own life, I became certified to share this joy with others. My classes focus on creating an inclusive environment where everyone can feel comfortable while getting a great workout.</p>
+                <h4 class="font-semibold text-gray-800 mb-2">Teaching Philosophy</h4>
+                <p class="text-gray-700">I believe fitness should be enjoyable and accessible to everyone. My goal is to create a judgment-free zone where you can express yourself through movement while improving your health. Whether you're a beginner or experienced dancer, my classes are designed to challenge and inspire you.</p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-5 mb-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Our Studio Values</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex">
+                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white mr-3 flex-shrink-0">
+                        <i class="ri-heart-pulse-line"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Health First</h4>
+                        <p class="text-gray-700 text-sm">We prioritize your wellbeing with modifications for all fitness levels.</p>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white mr-3 flex-shrink-0">
+                        <i class="ri-community-line"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Inclusive Community</h4>
+                        <p class="text-gray-700 text-sm">Everyone is welcome regardless of age, background, or fitness level.</p>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white mr-3 flex-shrink-0">
+                        <i class="ri-emotion-happy-line"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Fun-Focused</h4>
+                        <p class="text-gray-700 text-sm">We believe the best workout is one that doesn't feel like work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-[#9B1C8D] text-white p-6 rounded-lg text-center">
+            <h3 class="text-xl font-bold mb-2">Ready for your transformation?</h3>
+            <p class="mb-4">Your first class is on us! Book a trial session today.</p>
+            <a href="tel:+9779840448068" class="block w-full bg-white text-[#9B1C8D] py-3 !rounded-button font-semibold hover:bg-gray-100 transition duration-300 text-center text-lg">Call Us</a>
+        </div>
+    </section>
+
+    <section id="contact" class="section pt-16 pb-20 px-4">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Contact Us</h2>
+
+        <div class="mb-8 rounded-lg overflow-hidden shadow-md w-full max-w-sm mx-auto aspect-square bg-gray-100">
+            <img
+                class="w-full h-full object-contain"
+                src="image01/Screenshot 2025-06-12 110110.png"
+                alt="Map showing Image Fitness Centre location">
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md max-w-xl mx-auto">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Find Us</h3>
+            <div class="flex items-start mb-4">
+                <div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white mr-3 flex-shrink-0">
+                    <i class="ri-map-pin-line"></i>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-1">Address</h4>
+                    <p class="text-gray-700">(Hot & Spicy Restaurant ko maathi) <br>Amar Singha Chowk, Rani Pauwa Road</p>
+                    <p class="text-gray-700">Pokhara, Nepal</p>
+                </div>
+            </div>
+            <a href="tel:+9779840448068" class="block w-full bg-[#9B1C8D] text-white py-4 !rounded-button font-medium hover:bg-opacity-90 transition duration-300 text-center text-lg">
+                <i class="ri-phone-line mr-2"></i>Call Us
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white pt-10 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h3 class="text-xl font-['Agdasima'] mb-4">Image Fitness Centre</h3>
+                <p class="text-gray-400 mb-4">Join our vibrant community and transform your fitness journey through the joy of dance.</p>
+            </div>
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Image Fitness Centre. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-0 w-full bg-[#9B1C8D] text-white shadow-lg md:hidden">
+        <div class="grid grid-cols-3 text-center">
+            <a href="#home" class="tab-link flex flex-col items-center justify-center py-2 active">
+                <i class="ri-home-4-line ri-lg"></i>
+                <span class="text-xs mt-1">Home</span>
+            </a>
+            <a href="#about" class="tab-link flex flex-col items-center justify-center py-2">
+                <i class="ri-user-line ri-lg"></i>
+                <span class="text-xs mt-1">About</span>
+            </a>
+            <a href="#contact" class="tab-link flex flex-col items-center justify-center py-2">
+                <i class="ri-map-pin-line ri-lg"></i>
+                <span class="text-xs mt-1">Contact</span>
+            </a>
+        </div>
+    </div>
+
+    <script id="navigation-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Navigation active state
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const tabLinks = document.querySelectorAll('.tab-link');
+
+            function setActiveLink() {
+                const scrollPosition = window.scrollY;
+                const sections = document.querySelectorAll('.section');
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100; // Adjusted for fixed header
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        // Desktop nav
+                        navLinks.forEach(link => {
+                            link.classList.remove('nav-active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('nav-active');
+                            }
+                        });
+
+                        // Mobile nav
+                        mobileNavLinks.forEach(link => {
+                            link.classList.remove('bg-purple-800'); // Remove from all first
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('bg-purple-800');
+                            }
+                        });
+
+                        // Tab bar
+                        tabLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Smooth scrolling for navigation links
+            const allLinks = [...navLinks, ...mobileNavLinks, ...tabLinks];
+            allLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70, // Offset for fixed header
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+
+            window.addEventListener('scroll', setActiveLink);
+            setActiveLink(); // Set initial state on page load
+        });
+    </script>
+</body>
+</html>
