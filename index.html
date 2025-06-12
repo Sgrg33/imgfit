@@ -58,9 +58,34 @@
             /* Add any other active styles like background, border etc. */
             background-color: rgba(0,0,0,0.1); /* Slight darker background */
         }
+        
+        .image-zoom-container {
+        /* Optional: Set a fixed size for the container and hide overflow */
+        width: 300px;
+        height: 300px;
+        overflow: hidden; /* Crucial to keep the zoomed part contained */
+        border: 1px solid #ddd; /* Optional: Add a border */
+        margin: 20px auto; /* Center it */
+        }
+
+        .image-zoom-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image covers the container */
+        transition: transform 0.3s ease-in-out; /* Smooth transition for zoom */
+        transform-origin: center center; /* Default zoom from center */
+        /* For touch devices, sometimes : active can simulate a tap */
+        }
+
         .image-zoom-container:hover img {
         transform: scale(1.2)
         }
+
+        /* For better touch interaction (simulating hover on tap) */
+/* This can be tricky and browser-dependent, JavaScript is often better for touch */
+.image-zoom-container:active img {
+    transform: scale(1.2);
+}
     </style>
 </head>
 <body class="bg-white">
